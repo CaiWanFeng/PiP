@@ -3,6 +3,8 @@
 
 简书：https://www.jianshu.com/p/5651fac912b5
 
-**demo视频展示：**
+Swift 和 OC 的 demo 都有。
+
+**demo 视频展示：**
 
 ![demo](demo.gif)
