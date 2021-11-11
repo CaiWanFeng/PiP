@@ -1,4 +1,6 @@
-> Hey bro, you can contact me with WeChat, my WeChat is **cq1351675135**
+> Hey bro, you can contact me with WeChat to get the source code, my WeChat is **cq1351675135**
+
+---
 
 **The features I had realized:**
 
