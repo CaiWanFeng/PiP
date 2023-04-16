@@ -1,0 +1,6 @@
+framework module Pods_timer_swift {
+  umbrella header "Pods-timer_swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

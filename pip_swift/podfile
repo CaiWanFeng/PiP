@@ -1,0 +1,7 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '14.0'
+use_frameworks!
+
+target 'pip_swift' do
+    pod 'SnapKit', '~> 5.0.0'
+end
