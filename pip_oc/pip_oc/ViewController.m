@@ -34,7 +34,7 @@
             [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error];
             [[AVAudioSession sharedInstance] setActive:YES withOptions:1 error:&error];
         } @catch (NSException *exception) {
-            NSLog(@"AVAudioSession发生错误");
+            NSLog(@"AVAudioSession error = %@", exception.description);
         }
         [self setupPip];
         [self setupUI];
@@ -42,28 +42,24 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleEnterForeground) name:UIApplicationDidBecomeActiveNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
-        
     } else {
-        NSLog(@"不支持画中画");
+        NSLog(@"nonsupport pip mode");
     }
-    
-    // 拍视频画中画文本滚动不停止
-    [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
-        [[UIApplication sharedApplication] endBackgroundTask:UIBackgroundTaskInvalid];
-    }];
 }
 
 - (void)handleEnterForeground {
-    NSLog(@"进入前台");
+    NSLog(@"DidBecomeActive");
 }
 
 - (void)handleEnterBackground {
-    NSLog(@"进入后台");
+    NSLog(@"DidEnterBackground");
 }
 
-// 配置画中画
+#pragma mark - pip
+
+// config pip
 - (void)setupPip {
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"竖向视频" withExtension:@"MP4"];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"PortraitVideo" withExtension:@"MP4"];
     AVAsset *asset = [AVAsset assetWithURL:url];
     AVPlayerItem * item = [[AVPlayerItem alloc] initWithAsset:asset];
     
@@ -77,14 +73,16 @@
     
     self.pipController = [[AVPictureInPictureController alloc] initWithPlayerLayer: layer];
     self.pipController.delegate = self;
-    // 使用 KVC，隐藏播放按钮、快进快退按钮
-    [self.pipController setValue:[NSNumber numberWithInt:1] forKey:@"requiresLinearPlayback"];
+    // use KVC hide system controls and you can try other values
+    [self.pipController setValue:[NSNumber numberWithInt:1] forKey:@"controlsStyle"];
 }
+
+#pragma mark - UI
 
 - (void)setupUI {
     self.pipButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.view addSubview:self.pipButton];
-    [self.pipButton setTitle:@"开启/关闭画中画" forState:UIControlStateNormal];
+    [self.pipButton setTitle:@"start/stop pip" forState:UIControlStateNormal];
     [self.pipButton addTarget:self action:@selector(pipButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.pipButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view);
@@ -95,7 +93,7 @@
     
     UIButton *transformButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.view addSubview:transformButton];
-    [transformButton setTitle:@"改变画中画窗口形状" forState:UIControlStateNormal];
+    [transformButton setTitle:@"change shape" forState:UIControlStateNormal];
     [transformButton addTarget:self action:@selector(transform) forControlEvents:UIControlEventTouchUpInside];
     [transformButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view);
@@ -106,7 +104,7 @@
     
     UIButton *rotateButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.view addSubview:rotateButton];
-    [rotateButton setTitle:@"旋转" forState:UIControlStateNormal];
+    [rotateButton setTitle:@"rotate" forState:UIControlStateNormal];
     [rotateButton addTarget:self action:@selector(rotate) forControlEvents:UIControlEventTouchUpInside];
     [rotateButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view);
@@ -116,7 +114,7 @@
     }];
 }
 
-// 你的自定义view
+// your custom view
 - (void)setupCustomView {
     self.customView = [[UIView alloc] init];
     self.customView.backgroundColor = [UIColor whiteColor];
@@ -125,8 +123,8 @@
     [self.customView addSubview:self.textView];
     self.textView.backgroundColor = [UIColor blackColor];
     self.textView.textColor = [UIColor whiteColor];
-    self.textView.font = [UIFont systemFontOfSize:20];
-    self.textView.text = @"文本文本\n文本文本\n文本文本\n文本文本\n文本文本\n文本文本\n可以放任意view";
+    self.textView.font = [UIFont systemFontOfSize:10];
+    self.textView.text = @"your text\nyour can add any view\nthis is your view\nit can be any view\ncool?\nYes this is cool\n泰裤辣！！！";
     self.textView.userInteractionEnabled = NO;
     [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.customView);
@@ -159,11 +157,11 @@
 - (void)move {
     self.textView.contentOffset = CGPointMake(0, self.textView.contentOffset.y+1);
     if (self.textView.contentOffset.y > self.textView.contentSize.height) {
-        self.textView.contentOffset = CGPointZero;
+        self.textView.contentOffset = CGPointMake(0, -self.textView.contentSize.height);
     }
 }
 
-#pragma - mark 开启\关闭 画中画
+#pragma - mark start/stop pip
 
 - (void)pipButtonClicked {
     if (self.pipController.isPictureInPictureActive) {
@@ -182,11 +180,11 @@
     index++;
     int i = index % 3;
     if (i == 0) {
-        videoName = @"横向视频";
+        videoName = @"LandscapeVideo";
     } else if (i == 1) {
-        videoName = @"方形视频";
+        videoName = @"SquareVideo";
     } else {
-        videoName = @"竖向视频";
+        videoName = @"PortraitVideo";
     }
     NSURL *url = [[NSBundle mainBundle] URLForResource:videoName withExtension:@"MP4"];
     AVAsset *asset = [AVAsset assetWithURL:url];
@@ -204,7 +202,7 @@
     
     AVPlayerItem * currentItem = self.pipController.playerLayer.player.currentItem;
     
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"方形视频" withExtension:@"MP4"];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"SquareVideo" withExtension:@"MP4"];
     AVAsset *asset = [AVAsset assetWithURL:url];
     AVPlayerItem * item = [[AVPlayerItem alloc] initWithAsset:asset];
     [self.pipController.playerLayer.player replaceCurrentItemWithPlayerItem:item];
@@ -238,6 +236,10 @@
 
 - (void)pictureInPictureControllerDidStopPictureInPicture:(AVPictureInPictureController *)pictureInPictureController {
     [self stopDisplayLink];
+}
+
+- (void)pictureInPictureController:(AVPictureInPictureController *)pictureInPictureController failedToStartPictureInPictureWithError:(NSError *)error {
+    NSLog(@"%@", error.description);
 }
 
 @end

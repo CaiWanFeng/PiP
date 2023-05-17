@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C0469756D5B9C2E526A741D1 /* libPods-pip_oc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4289E46C055334B63223F28 /* libPods-pip_oc.a */; };
-		D91ED415267C7EA30064D2EB /* 竖向视频.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = D91ED413267C7EA30064D2EB /* 竖向视频.MP4 */; };
-		D91ED416267C7EA30064D2EB /* 方形视频.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = D91ED414267C7EA30064D2EB /* 方形视频.MP4 */; };
+		D91ED415267C7EA30064D2EB /* PortraitVideo.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = D91ED413267C7EA30064D2EB /* PortraitVideo.MP4 */; };
+		D91ED416267C7EA30064D2EB /* SquareVideo.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = D91ED414267C7EA30064D2EB /* SquareVideo.MP4 */; };
 		D950ECEA265E30D0006DD1A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D950ECE9265E30D0006DD1A6 /* AppDelegate.m */; };
 		D950ECED265E30D0006DD1A6 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D950ECEC265E30D0006DD1A6 /* SceneDelegate.m */; };
 		D950ECF0265E30D0006DD1A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D950ECEF265E30D0006DD1A6 /* ViewController.m */; };
@@ -18,15 +18,15 @@
 		D950ECF8265E30D1006DD1A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D950ECF6265E30D1006DD1A6 /* LaunchScreen.storyboard */; };
 		D950ECFB265E30D1006DD1A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D950ECFA265E30D1006DD1A6 /* main.m */; };
 		D95D3E3827A2AEBA001C1B6E /* slience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D95D3E3727A2AEBA001C1B6E /* slience.mp3 */; };
-		D970E339265E9FE700302A8C /* 横向视频.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = D970E338265E9FE700302A8C /* 横向视频.MP4 */; };
+		D970E339265E9FE700302A8C /* LandscapeVideo.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = D970E338265E9FE700302A8C /* LandscapeVideo.MP4 */; };
 		D9F4A6DF28BF0DE600594E10 /* BackgroundTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F4A6DC28BF0DE600594E10 /* BackgroundTaskManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0CCC68DD4EC31DE33EC74BD0 /* Pods-pip_oc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pip_oc.debug.xcconfig"; path = "Target Support Files/Pods-pip_oc/Pods-pip_oc.debug.xcconfig"; sourceTree = "<group>"; };
 		B4289E46C055334B63223F28 /* libPods-pip_oc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pip_oc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D91ED413267C7EA30064D2EB /* 竖向视频.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "竖向视频.MP4"; sourceTree = "<group>"; };
-		D91ED414267C7EA30064D2EB /* 方形视频.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方形视频.MP4"; sourceTree = "<group>"; };
+		D91ED413267C7EA30064D2EB /* PortraitVideo.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = PortraitVideo.MP4; sourceTree = "<group>"; };
+		D91ED414267C7EA30064D2EB /* SquareVideo.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SquareVideo.MP4; sourceTree = "<group>"; };
 		D950ECE5265E30D0006DD1A6 /* pip_oc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pip_oc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D950ECE8265E30D0006DD1A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D950ECE9265E30D0006DD1A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		D950ECF9265E30D1006DD1A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D950ECFA265E30D1006DD1A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D95D3E3727A2AEBA001C1B6E /* slience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = slience.mp3; sourceTree = "<group>"; };
-		D970E338265E9FE700302A8C /* 横向视频.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "横向视频.MP4"; sourceTree = "<group>"; };
+		D970E338265E9FE700302A8C /* LandscapeVideo.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LandscapeVideo.MP4; sourceTree = "<group>"; };
 		D9F4A6DC28BF0DE600594E10 /* BackgroundTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundTaskManager.m; sourceTree = "<group>"; };
 		D9F4A6DD28BF0DE600594E10 /* BackgroundTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundTaskManager.h; sourceTree = "<group>"; };
 		FADB425D76B8CB712766D7B4 /* Pods-pip_oc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pip_oc.release.xcconfig"; path = "Target Support Files/Pods-pip_oc/Pods-pip_oc.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,9 +103,9 @@
 				D950ECEC265E30D0006DD1A6 /* SceneDelegate.m */,
 				D950ECEE265E30D0006DD1A6 /* ViewController.h */,
 				D950ECEF265E30D0006DD1A6 /* ViewController.m */,
-				D91ED414267C7EA30064D2EB /* 方形视频.MP4 */,
-				D91ED413267C7EA30064D2EB /* 竖向视频.MP4 */,
-				D970E338265E9FE700302A8C /* 横向视频.MP4 */,
+				D91ED414267C7EA30064D2EB /* SquareVideo.MP4 */,
+				D91ED413267C7EA30064D2EB /* PortraitVideo.MP4 */,
+				D970E338265E9FE700302A8C /* LandscapeVideo.MP4 */,
 				D950ECF1265E30D0006DD1A6 /* Main.storyboard */,
 				D950ECF4265E30D1006DD1A6 /* Assets.xcassets */,
 				D950ECF6265E30D1006DD1A6 /* LaunchScreen.storyboard */,
@@ -182,13 +182,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D970E339265E9FE700302A8C /* 横向视频.MP4 in Resources */,
+				D970E339265E9FE700302A8C /* LandscapeVideo.MP4 in Resources */,
 				D950ECF8265E30D1006DD1A6 /* LaunchScreen.storyboard in Resources */,
 				D95D3E3827A2AEBA001C1B6E /* slience.mp3 in Resources */,
 				D950ECF5265E30D1006DD1A6 /* Assets.xcassets in Resources */,
 				D950ECF3265E30D0006DD1A6 /* Main.storyboard in Resources */,
-				D91ED415267C7EA30064D2EB /* 竖向视频.MP4 in Resources */,
-				D91ED416267C7EA30064D2EB /* 方形视频.MP4 in Resources */,
+				D91ED415267C7EA30064D2EB /* PortraitVideo.MP4 in Resources */,
+				D91ED416267C7EA30064D2EB /* SquareVideo.MP4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +373,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4J5JWPJ294;
+				DEVELOPMENT_TEAM = 68FWMLD4QB;
 				INFOPLIST_FILE = pip_oc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -392,7 +392,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4J5JWPJ294;
+				DEVELOPMENT_TEAM = 68FWMLD4QB;
 				INFOPLIST_FILE = pip_oc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
