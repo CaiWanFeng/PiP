@@ -1,4 +1,4 @@
-# [中文文档](README_cn.md)
+# [中文文档](https://blog.csdn.net/m0_59449563/article/details/118031905)
 
 # Features:
 
