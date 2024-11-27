@@ -109,7 +109,7 @@ class ViewController: UIViewController, AVPictureInPictureControllerDelegate {
         pipController = AVPictureInPictureController.init(playerLayer: playerLayer)!
         pipController.delegate = self
         // 隐藏播放按钮、快进快退按钮
-        pipController.setValue(1, forKey: "requiresLinearPlayback")
+        pipController.setValue(1, forKey: "controlsStyle")
         // 进入后台自动开启画中画（必须处于播放状态）
         if #available(iOS 14.2, *) {
             pipController.canStartPictureInPictureAutomaticallyFromInline = true
