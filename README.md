@@ -43,10 +43,3 @@ AVPlayerItem * item = [[AVPlayerItem alloc] initWithAsset:asset];
 ## 2. float_timer
 
 ![float_timer](float_timer.PNG)
-
-
-# Contact:
-
-For more technical exchange you can scan to add my WeChat:
-
-![contact](contact.PNG)
